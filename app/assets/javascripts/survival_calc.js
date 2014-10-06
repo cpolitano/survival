@@ -4,7 +4,7 @@ var googlePlacesKey = "AIzaSyDae3V_0lLmnd2awsbZFT55GMt7fgAaOBI";
 $("#search").on('submit', function(event){
 	event.preventDefault();
 	city = $("#city").val();
-	state = $("#state").val();
+	state = $("select option:selected").val();
 	findCity(city, state);
 })
 
