@@ -1,0 +1,22 @@
+body {
+	font-family: 'Ubuntu', sans-serif;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: 300;
+}
+
+#search {
+	text-align: center;
+	label {
+		font-size: 1.5em;
+		font-weight: 400;
+	}
+	input {
+		background-color: #000;
+		border: 1px solid #FFF;
+		outline: none;
+	}
+}
