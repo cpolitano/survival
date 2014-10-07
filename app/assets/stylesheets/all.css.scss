@@ -50,6 +50,18 @@ svg#layer {
 
 .search-hidden {
 	display:none;
+	background: black;
+	font-size: 1em;
+	transition: ease-out 1s;
+	&:hover{
+		background:red;
+		transition: 1s;
+	}
+	a {
+		font-family: 'Nosifer', cursive;
+		text-decoration: none;
+		color: $accentGreen;
+	}
 }
 
 input {
@@ -59,5 +71,16 @@ input {
 
 select {
 	color: #b7ff0f;
-	background: black;
+	background-color: black;
+}
+
+.no-data {
+	font-family: 'Nosifer', cursive;
+	font-size: 2em;
+}
+
+#results p {
+	font-size: 2em;
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: bold;
 }
