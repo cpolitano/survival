@@ -34,22 +34,17 @@ function initialize(lat,lng, search) {
 
   var request = {
     location: currentLocation,
-    radius: "1",
+    radius: "16093.4",
     types: ["store"],
-    query: search
+    keyword: search
   };
   infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
+  return service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     console.log(results.length);
-    for (var i = 0; i < results.length; i ++){
-    	console.log(results[i]);
-    }
   }
 }
-
-// google.maps.event.addDomListener(window, 'load', initialize(0,0,"guns"));
