@@ -4,9 +4,11 @@ $accentGreen: #b7ff0f;
 	margin: 0 auto;
 	text-align: center;
 	width: 50%;
+	z-index: 10;
 }
 
 #search {
+	z-index: 10;
 	label {
 		font-size: 1.5em;
 		font-weight: 400;

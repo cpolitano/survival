@@ -1,13 +1,16 @@
 $accentGreen: #b7ff0f;
 
 body {
-	background-color: #000;
+	background-color: #222;
+	/*background: url(assets/map.svg) no-repeat center center fixed;*/
 	color: #FFF;
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 300;
 	margin: 0 auto;
+	position: relative;
 	text-align: center;
 	width: 100%;
+	z-index: 10;
 }
 
 h1 {
@@ -15,11 +18,22 @@ h1 {
 	font-size: 2em;
 	font-weight: 300;
 	text-shadow: 0 0 8px $accentGreen;
+	z-index: 10;
 }
 
 h2 {
 	font-weight: 300;
+	z-index: 10;
 }
+
+#map {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
 
 .twitter-share-button {
 
