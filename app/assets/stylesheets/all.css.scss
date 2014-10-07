@@ -72,6 +72,7 @@ input {
 select {
 	color: #b7ff0f;
 	background-color: black;
+	font-size: 1em;
 }
 
 .no-data {
@@ -79,8 +80,14 @@ select {
 	font-size: 2em;
 }
 
-#results p {
-	font-size: 2em;
-	font-family: 'Ubuntu', sans-serif;
-	font-weight: bold;
+#results {
+	background: rgba(0,0,0,0.3);
+	p {
+		font-size: 2em;
+		font-family: 'Ubuntu', sans-serif;
+		font-weight: bold;
+	}
+}
+.form {
+	display: inline;
 }
