@@ -14,6 +14,7 @@ $("#search").on('submit', function(event){
 	event.preventDefault();
 	city = $("#city").val();
 	state = $("select option:selected").val();
+	$("#results").append("<ul>");
 	findCity(city, state);
 	$("form").hide();
 	$(".search-hidden").show();
@@ -63,10 +64,10 @@ function callback(results, status) {
     stores += results.length;
     runCount++;
     if (runCount === 2){
-    	$("#results").append("<li>Population: " + population + "</li>")
+    	$("#results").append("<li>Population: " + population + "</li>");
     	$("#results").append("<li>Useful Stores Nearby: " + stores + "</li>");
-    	var score = algorithm(population, stores)
-    	$("#results").append("<li>Chance Of Survival: " + score + "%</li>");
+    	var score = algorithm(population, stores);
+    	$("#results").append("<li>Chance Of Survival: " + score + "%</li></ul>");
     }
   }
 }

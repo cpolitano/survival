@@ -24,6 +24,7 @@ h1 {
 h2 {
 	font-weight: 300;
 	z-index: 10;
+	font-family: 'Lato', sans-serif;
 }
 
 #map {
@@ -49,4 +50,14 @@ svg#layer {
 
 .search-hidden {
 	display:none;
+}
+
+input {
+	text-align: center;
+	border-radius: 10px;
+}
+
+select {
+	color: #b7ff0f;
+	background: black;
 }
