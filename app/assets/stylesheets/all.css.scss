@@ -52,8 +52,10 @@ svg#layer {
 
 .search-hidden {
 	display:none;
-	background: black;
+	border: none;
+	background-color: #222;
 	font-size: 1em;
+	outline: none;
 	transition: ease-out 1s;
 	&:hover{
 		background:red;
@@ -76,6 +78,6 @@ svg#layer {
 	p {
 		font-size: 2em;
 		font-weight: 300;
-		line-height: 1.5em;
+		margin: 10px;
 	}
 }
