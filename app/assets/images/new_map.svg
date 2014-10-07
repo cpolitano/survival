@@ -430,7 +430,7 @@
 </circle>
 
 <circle class="st2" cx="405" cy="290" id="Portland">
-	<animate attributeType="xml" attributeName="r" from="0" to="80" begin="5.5s" dur="10s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="70" begin="5.5s" dur="10s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="483" cy="374" id="Salt Lake City">
@@ -450,6 +450,6 @@
 </circle>
 
 <circle class="st2" cx="650" cy="300" id="Random4">
-	<animate attributeType="xml" attributeName="r" from="0" to="100" begin="7.5s" dur="10s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="100" begin="7.5s" dur="12s" fill="freeze" />
 </circle>
 </svg>

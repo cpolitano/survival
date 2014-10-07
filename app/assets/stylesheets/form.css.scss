@@ -5,28 +5,48 @@ $accentGreen: #b7ff0f;
 	text-align: center;
 	width: 50%;
 	z-index: 10;
+	display: inline;
 }
 
 #search {
 	z-index: 10;
-	label {
-		font-size: 1.5em;
-		font-weight: 400;
-		padding: 15px;
-	}
+
 	input {
-		background-color: #000;
-		border: 1px solid #FFF;
+		background-color: #222;
 		color: #FFF;
-		font-size: 1em;
+		font-size: 1.25em;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-style: italic;
 		height: 40px;
 		margin: 15px;
 		outline: none;
 		width: 200px;
+		border: none;
+		text-align: center;
+		border-radius: 5px;
 	}
+
+
 	input[type=submit]:hover {
 		border: 1px solid $accentGreen;
 		box-shadow: 0 0 5px $accentGreen;
 		color: $accentGreen;	
 	}
+
+	input[type=placeholder]{
+		color: #777;
+	}
+
+	select {
+		color: #777;
+		background-color: #222;
+		font-size: 1.25em;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-style: italic;
+		height: 40px;
+		border: none;
+	}
+
 }
