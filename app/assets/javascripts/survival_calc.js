@@ -14,7 +14,6 @@ $("#search").on('submit', function(event){
 	event.preventDefault();
 	city = $("#city").val();
 	state = $("select option:selected").val();
-	$("#results").append("<ul>");
 	findCity(city, state);
 	$("form").hide();
 	$(".search-hidden").show();
@@ -36,7 +35,7 @@ function findCity(city, state){
 				}
 			}
 			else if (data.response.length === 0){
-				$("#results").append("<li>No Data Found</li>");
+				$("#results").append("<p class='no-data'>No Data Found</p>");
 			}
 		}
 	});
@@ -64,10 +63,10 @@ function callback(results, status) {
     stores += results.length;
     runCount++;
     if (runCount === 2){
-    	$("#results").append("<li>Population: " + population + "</li>");
-    	$("#results").append("<li>Useful Stores Nearby: " + stores + "</li>");
+    	$("#results").append("<p>Population: " + population + "</p>");
+    	$("#results").append("<p>Useful Stores Nearby: " + stores + "</p>");
     	var score = algorithm(population, stores);
-    	$("#results").append("<li>Chance Of Survival: " + score + "%</li></ul>");
+    	$("#results").append("<p>Chance Of Survival: " + score + "%</p>");
     }
   }
 }
