@@ -14,8 +14,11 @@ $("#search").on('submit', function(event){
 	event.preventDefault();
 	city = $("#city").val();
 	state = $("select option:selected").val();
+	$("#results").append("<ul>");
 	findCity(city, state);
-})
+	$("form").hide();
+	$(".search-hidden").show();
+});
 
 function findCity(city, state){
 	$.ajax({
@@ -23,12 +26,17 @@ function findCity(city, state){
 		method: "GET",
 		dataType: "jsonp",
 		success: function(data){
-			for (var i = 0; i < data.response.length; i ++){
-				if (data.response[i].StatePostal === state){
-					population = parseInt(data.response[i].Pop);
-					initialize(data.response[i].Lat, data.response[i].Long, "guns");
-					initialize(data.response[i].Lat, data.response[i].Long, "grocery");
+			if (data.response.length > 0){
+				for (var i = 0; i < data.response.length; i ++){
+					if (data.response[i].StatePostal === state){
+						population = parseInt(data.response[i].Pop);
+						initialize(data.response[i].Lat, data.response[i].Long, "guns");
+						initialize(data.response[i].Lat, data.response[i].Long, "grocery");
+					}
 				}
+			}
+			else if (data.response.length === 0){
+				$("#results").append("<li>No Data Found</li>");
 			}
 		}
 	});
@@ -52,15 +60,14 @@ function initialize(lat,lng, search) {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    // $("#results").append("<li data='" + results.length + "'>" + query + " Stores Nearby: " + results.length + "</li>");
     returnObj["value"] = results.length;
     stores += results.length;
     runCount++;
     if (runCount === 2){
-    	$("#results").append("<li>Population: " + population + "</li>")
+    	$("#results").append("<li>Population: " + population + "</li>");
     	$("#results").append("<li>Useful Stores Nearby: " + stores + "</li>");
-    	var score = algorithm(population, stores)
-    	$("#results").append("<li>Chance Of Survival: " + score + "%</li>");
+    	var score = algorithm(population, stores);
+    	$("#results").append("<li>Chance Of Survival: " + score + "%</li></ul>");
     }
   }
 }

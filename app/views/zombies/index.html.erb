@@ -4,11 +4,10 @@
 	<h2>Enter your city and state to see your chances of surviving the zombie apocalypse.</h2>
 
 <form id="search">
-	<label for="city">City</label>
-	<input type="search" id="city"><br>
-	<label for="state">State</label>
+	<input type="search" placeholder="Enter City" id="city"><br>
 	<!-- <input type="search" id="state"> -->
 	<select name="state">
+		<option value="state-initials">Select State</option>
 		<option value="AL">Alabama</option>
 		<option value="AK">Alaska</option>
 		<option value="AZ">Arizona</option>
@@ -63,10 +62,12 @@
 	</select><br>
 	<input type="submit" value="Search">
 </form>
-<div id="results"></div>
+<button class="search-hidden"><a href="/">Search Again</a></button>
+<div id="results">
+</div>
 <div id="asdf"></div>
 
 <object id="map">
-	<embed src="assets/map.svg">
+	<embed src="assets/new_map.svg">
 </object>
 
