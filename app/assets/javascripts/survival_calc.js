@@ -26,7 +26,6 @@ function checkDB(city, state){
 		dataType: "json",
 		method: "GET",
 		success: function(data){
-			console.log(data[0])
 			var needAjax = true;
 			for (var i = 0; i < data.length; i ++){
 				if (data[i].name === city.toLowerCase() + ", " + state.toLowerCase()){
