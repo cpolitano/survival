@@ -36,12 +36,11 @@ h1 {
 
 .share {
 	bottom: 3%;
-	margin: 0 auto;
 	position: fixed;
-	text-align: center;
 	width: 100%;
 	a {
 		color: rgba(0,0,0,0.0);
+		float: left;
 	}
 	img {
 		float:right;
@@ -50,8 +49,9 @@ h1 {
 }
 
 #twitter-sprite {
-	font-size: 1.75em;
 	background: url('twitter-sprite.png') 0 0 no-repeat;
+	font-size: 1.75em;
+	margin-left: 5%;
 	&:hover{
 		background-position: 0px -34px;
 	}
