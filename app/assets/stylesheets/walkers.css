@@ -11,6 +11,6 @@
 	height:50px;
 }
 
-body {
-   cursor: url("survivor_icon.svg"), default;
-}
+/** {
+  cursor: url("survivor_icon.svg"), default;
+}*/
