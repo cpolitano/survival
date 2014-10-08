@@ -15,6 +15,8 @@ $("#search").on('submit', function(event){
 	state = $("select option:selected").val();
 	checkDB(city,state)
 	$("form").hide();
+	$("#clock").hide();
+	$("#zombies").hide();
 	$(".search-hidden").show();
 });
 
@@ -37,9 +39,9 @@ function checkDB(city, state){
 			if (needAjax){
 				findCity(city,state)
 			} else {
-				$("#results").append("<p>Population: " + population + "</p>");
-    		$("#results").append("<p>Useful Stores Nearby: " + stores + "</p>");
-				$("#results").append("<p>Chance Of Survival: " + score + "%</p>");
+				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
+				$("#results").append("<p>Based on Population: " + population + "</p>");
+    			$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
 			}
 		}
 	})

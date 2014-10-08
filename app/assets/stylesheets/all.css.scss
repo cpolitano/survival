@@ -21,6 +21,12 @@ h1 {
 	text-transform: uppercase;	
 }
 
+.element {
+	font-size: 1.5em;
+	margin: 2em auto;
+	width: 50%;
+}
+
 #map {
 	position: absolute;
 	top: 0;
@@ -115,6 +121,9 @@ h1 {
 
 #results {
 	background: rgba(0,0,0,0.4);
+	border-radius: 5px;
+	margin: 20px auto;
+	width: 60%;
 	p {
 		font-size: 2em;
 		font-weight: 300;
@@ -125,6 +134,18 @@ h1 {
 @media all and (max-width:800px) { 
 	#map {
 		top: 50%;
+	}
+
+	#results {
+		width: 100%;
+	}
+
+	#building-background, #building-div {
+		display: none;
+	}
+
+	.zombie {
+		display: none;
 	}
 }
 
