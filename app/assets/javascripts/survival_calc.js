@@ -33,9 +33,8 @@ function findCity(city, state){
 						initialize(data.response[i].Lat, data.response[i].Long, "grocery");
 					}
 				}
-			}
-			else if (data.response.length === 0){
-				$("#results").append("<p class='no-data'>No Data Found</p>");
+			} else {
+				$("#results").append("They didn't make it...");
 			}
 		}
 	});
@@ -68,6 +67,11 @@ function callback(results, status) {
     	var score = algorithm(population, stores);
     	$("#results").append("<p>Chance Of Survival: " + score + "%</p>");
     }
+  } else {
+  	runCount++;
+  	if (runCount === 2){
+  		$("#results").append("They didn't make it...");
+  	}
   }
 }
 
