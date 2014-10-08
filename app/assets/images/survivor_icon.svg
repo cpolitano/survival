@@ -1,0 +1,67 @@
+<svg version="1.1" id="Background_xA0_Image_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="732px" height="584px" viewBox="0 0 732 584" style="enable-background:new 0 0 732 584;"
+	 xml:space="preserve">
+<style type="text/css">
+<![CDATA[
+	.st0{fill:#4B84B2;}
+	.st1{fill:#996C30;}
+	.st2{fill:#C9905D;}
+	.st3{fill:#DBDBDB;}
+]]>
+</style>
+
+<!-- shoe -->
+<path class="st0" d="M232.181,459.995c0,11.668-9.772,21.129-21.828,21.129H71.209c-12.055,0-21.828-9.461-21.828-21.129V222.32
+	c0-11.668,9.773-21.128,21.828-21.128h139.144c12.056,0,21.828,9.46,21.828,21.128V459.995z">
+	<animateTransform id="walk"
+			attributeName="transform"
+			attributeType="XML"
+			type="translate"
+			dur=".5s"
+			values="0,-80; 0,40; 0,-80"
+			repeatCount="indefinite"/>
+</path>
+
+<!-- shoe -->
+<path class="st0" d="M674.032,450.996c0,11.668-9.772,21.128-21.828,21.128H513.06c-12.056,0-21.828-9.46-21.828-21.128V213.32
+	c0-11.667,9.772-21.128,21.828-21.128h139.145c12.056,0,21.828,9.461,21.828,21.128V450.996z">
+	<animateTransform id="walk"
+			attributeName="transform"
+			attributeType="XML"
+			type="translate"
+			dur=".5s"
+			values="0,40; 0,-80; 0,40"
+			repeatCount="indefinite"/>
+</path>
+
+<!-- arm -->
+<ellipse class="st2" cx="158.627" cy="201.192" rx="105.83" ry="151.496">
+	<animateTransform id="walk"
+				attributeName="transform"
+				attributeType="XML"
+				type="translate"
+				dur=".5s"
+				values="0,-80; 0,40; 0,-80"
+				repeatCount="indefinite"/>
+</ellipse>
+
+<!-- arm -->
+<ellipse class="st2" cx="575.081" cy="201.192" rx="105.83" ry="151.496">
+	<animateTransform id="walk"
+			attributeName="transform"
+			attributeType="XML"
+			type="translate"
+			dur=".5s"
+			values="0,40; 0,-80; 0,40"
+			repeatCount="indefinite"/>
+</ellipse>
+
+<path class="st3" d="M264.457,415.618c0,5.969-4.839,10.809-10.809,10.809H60.189c-5.97,0-10.809-4.84-10.809-10.809V134.505
+	c0-5.97,4.839-10.809,10.809-10.809h193.459c5.969,0,10.809,4.839,10.809,10.809V415.618z"/>
+
+<path class="st3" d="M682.619,415.618c0,5.969-4.84,10.809-10.809,10.809h-193.46c-5.97,0-10.809-4.84-10.809-10.809V134.505
+	c0-5.97,4.839-10.809,10.809-10.809h193.46c5.969,0,10.809,4.839,10.809,10.809V415.618z"/>
+
+<ellipse class="st1" cx="356.954" cy="314.719" rx="218.126" ry="240.274"/>
+
+</svg>

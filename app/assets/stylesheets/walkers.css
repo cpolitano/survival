@@ -10,3 +10,7 @@
 	width: 30px;
 	height:50px;
 }
+
+body {
+   cursor: url("survivor_icon.svg"), default;
+}
