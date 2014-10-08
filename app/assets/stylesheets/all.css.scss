@@ -47,8 +47,9 @@ h1 {
 }
 
 #twitter-sprite {
-	background: url(assets/twitter-sprite.png);
-	background-position: 0px 0px;
+	background: url('assets/twitter-sprite.png') 0 0 no-repeat;
+	height: 33px;
+	width: 40px;
 	&:hover{
 		background-position: 0px -33px;
 	}
