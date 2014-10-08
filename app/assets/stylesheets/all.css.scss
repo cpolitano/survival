@@ -33,6 +33,22 @@ h1 {
 	width: 100%;
 }
 
+#building {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 20;
+}
+
+#building-background {
+	background-color: #000;
+	height: 40px;
+	width: 40px;
+	position: fixed;
+	top: 137px;
+	left: 83px;
+}
+
 
 .share {
 	bottom: 3%;
