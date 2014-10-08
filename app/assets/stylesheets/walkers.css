@@ -1,0 +1,12 @@
+.zombie {
+	position: absolute;
+	top: -10px;
+	left: -50px;
+	width: 30px;
+	height: 50px;
+}
+
+.zombie embed {
+	width: 30px;
+	height:50px;
+}
