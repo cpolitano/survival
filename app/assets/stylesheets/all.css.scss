@@ -42,7 +42,6 @@ h1 {
 	width: 100%;
 	a {
 		color: rgba(0,0,0,0.0);
-		font-size: 1.75em;
 	}
 	img {
 		float:right;
@@ -51,10 +50,18 @@ h1 {
 }
 
 #twitter-sprite {
-	height: 33px;
+	font-size: 1.75em;
 	background: url('twitter-sprite.png') 0 0 no-repeat;
 	&:hover{
-		background-position: 0px -33px;
+		background-position: 0px -34px;
+	}
+}
+
+#fb-sprite {
+	font-size: 2em;
+	background: url('fb-sprite.png') 0 0 no-repeat;
+	&:hover{
+		background-position: 0px -40px;
 	}
 }
 
