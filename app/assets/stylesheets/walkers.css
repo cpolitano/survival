@@ -1,7 +1,7 @@
 .zombie {
 	position: absolute;
-	top: -10px;
-	left: -50px;
+	top: 100px;
+	left: 75px;
 	width: 30px;
 	height: 50px;
 }

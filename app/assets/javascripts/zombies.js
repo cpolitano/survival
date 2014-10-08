@@ -36,13 +36,15 @@ Zombie.prototype = {
 	}
 }
 
-window.addEventListener('mousemove', getMouseXY);
-function getMouseXY(e){
-	if (count > 10){
-		z = new Zombie(0,0);
-	  z.findMouse(e.pageX, e.pageY);
-	  z.calculateRotation();
-	  z.animateZombie();
-	  count = 0;
-	} else {count++;}
-}
+$("#building-div").on('mouseover', function(){
+	window.addEventListener('mousemove', getMouseXY);
+	function getMouseXY(e){
+		if (count > 10){
+			z = new Zombie(0,0);
+		  z.findMouse(e.pageX, e.pageY);
+		  z.calculateRotation();
+		  z.animateZombie();
+		  count = 0;
+		} else {count++;}
+	}
+});
