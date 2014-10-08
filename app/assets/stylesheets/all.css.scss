@@ -5,7 +5,7 @@ body {
 	color: #FFF;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
-	margin: 3em auto;
+	margin: 2em auto 0;
 	position: relative;
 	text-align: center;
 	width: 100%;
@@ -35,14 +35,14 @@ h1 {
 
 
 .share {
-	bottom: 5%;
+	bottom: 3%;
 	margin: 0 auto;
 	position: fixed;
 	text-align: center;
 	width: 100%;
 	a {
-		height: 33px;
-		width: 40px;
+		color: rgba(0,0,0,0.0);
+		font-size: 1.75em;
 	}
 	img {
 		float:right;
@@ -51,9 +51,10 @@ h1 {
 }
 
 #twitter-sprite {
-	background: url('twitter-sprite.png') 0 -33px no-repeat;
+	height: 33px;
+	background: url('twitter-sprite.png') 0 0 no-repeat;
 	&:hover{
-		background-position: 0px -66px;
+		background-position: 0px -33px;
 	}
 }
 
