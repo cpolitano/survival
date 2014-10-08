@@ -40,6 +40,10 @@ h1 {
 	position: fixed;
 	text-align: center;
 	width: 100%;
+	a {
+		height: 33px;
+		width: 40px;
+	}
 	img {
 		float:right;
 		padding-right: 25px;
@@ -47,11 +51,9 @@ h1 {
 }
 
 #twitter-sprite {
-	background: url('assets/twitter-sprite.png') 0 0 no-repeat;
-	height: 33px;
-	width: 40px;
+	background: url('twitter-sprite.png') 0 -33px no-repeat;
 	&:hover{
-		background-position: 0px -33px;
+		background-position: 0px -66px;
 	}
 }
 
