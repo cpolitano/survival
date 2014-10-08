@@ -40,6 +40,10 @@ h1 {
 	position: fixed;
 	text-align: center;
 	width: 100%;
+	img {
+		float:right;
+		padding-right: 25px;
+	}
 }
 
 .hidden {
@@ -91,7 +95,7 @@ h1 {
 
 @media all and (max-width:600px) { 
 	#map {
-		top: 75%;
+		top: 80%;
 	}
 }
 
