@@ -346,7 +346,7 @@
 </circle>
 
 <circle class="st2" cx="741" cy="374" id="Chicago">
-	<animate attributeType="xml" attributeName="r" from="0" to="100" begin="3s" dur="4.8s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="100" begin="3.2s" dur="5.5s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="664" cy="548" id="Houston">
@@ -370,7 +370,7 @@
 </circle>
 
 <circle class="st2" cx="647" cy="506" id="Dallas">
-	<animate attributeType="xml" attributeName="r" from="0" to="120" begin="3.5s" dur="8s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="120" begin="3.5s" dur="15s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="370" cy="408" id="San Jose">
@@ -402,7 +402,7 @@
 </circle>
 
 <circle class="st2" cx="775" cy="361" id="Detroit">
-	<animate attributeType="xml" attributeName="r" from="0" to="50" begin="2.8s" dur="8s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="50" begin="2.8s" dur="10s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="900" cy="321" id="Boston">
@@ -418,7 +418,7 @@
 </circle>
 
 <circle class="st2" cx="730" cy="540" id="New Orleans">
-	<animate attributeType="xml" attributeName="r" from="0" to="30" begin="3.3s" dur="14.6s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="40" begin="3.3s" dur="14.6s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="850" cy="582" id="Miami">
@@ -426,30 +426,30 @@
 </circle>
 
 <circle class="st2" cx="409" cy="269" id="Seattle">
-	<animate attributeType="xml" attributeName="r" from="0" to="50" begin="5.2s" dur="18s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="80" begin="5.2s" dur="15s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="405" cy="290" id="Portland">
-	<animate attributeType="xml" attributeName="r" from="0" to="70" begin="5.5s" dur="10s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="70" begin="5.5s" dur="18s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="483" cy="374" id="Salt Lake City">
-	<animate attributeType="xml" attributeName="r" from="0" to="50" begin="4.3s" dur="24s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="60" begin="4.3s" dur="24s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="550" cy="300" id="Random1">
-	<animate attributeType="xml" attributeName="r" from="0" to="90" begin="7.8s" dur="17s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="75" begin="7.8s" dur="17s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="600" cy="330" id="Random2">
-	<animate attributeType="xml" attributeName="r" from="0" to="90" begin="7.7s" dur="15s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="80" begin="7.7s" dur="15s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="500" cy="350" id="Random3">
-	<animate attributeType="xml" attributeName="r" from="0" to="60" begin="7.6s" dur="13s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="60" begin="7.6s" dur="18s" fill="freeze" />
 </circle>
 
 <circle class="st2" cx="650" cy="300" id="Random4">
-	<animate attributeType="xml" attributeName="r" from="0" to="100" begin="7.5s" dur="12s" fill="freeze" />
+	<animate attributeType="xml" attributeName="r" from="0" to="80" begin="7.6s" dur="12s" fill="freeze" />
 </circle>
 </svg>
