@@ -1,0 +1,55 @@
+<svg version="1.1" id="Background_xA0_Image_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="732px" height="1168px" viewBox="0 0 732 1168" style="enable-background:new 0 0 732 1168;"
+	 xml:space="preserve">
+<style type="text/css">
+
+<![CDATA[
+	.st0{fill:#AABF30;}
+	.st1{fill:#BADB2E;}
+	.st2{fill: #999933;}
+	.st3{fill:#99CC00;}
+	.st4{fill:#666600;}
+	.st5{fill:#CC9900;}
+	.st6{fill:#757527;}
+]]>
+
+</style>
+
+<path class="st4" d="M231.542,1019.308c0,12.954-10.849,23.457-24.234,23.457H52.826c-13.384,0-24.234-10.503-24.234-23.457V755.433
+	c0-12.954,10.85-23.457,24.234-23.457h154.482c13.385,0,24.234,10.503,24.234,23.457V1019.308z">
+		<animateTransform id="walk"
+			attributeName="transform"
+			attributeType="XML"
+			type="translate"
+			dur="1s"
+			values="0,-80; 0,40; 0,-80"
+			repeatCount="indefinite"/>
+</path>
+
+<path class="st4" d="M706.372,1025.303c0,12.954-10.849,23.457-24.235,23.457H527.654c-13.384,0-24.232-10.503-24.232-23.457
+	V761.428c0-12.954,10.849-23.457,24.232-23.457h154.482c13.387,0,24.235,10.503,24.235,23.457V1025.303z">
+	<animateTransform id="walk"
+			attributeName="transform"
+			attributeType="XML"
+			type="translate"
+			dur="1s"
+			values="0,40; 0,-80; 0,40"
+			repeatCount="indefinite"/>
+</path>
+
+<ellipse class="st2" cx="149.881" cy="435.183" rx="117.496" ry="410.567"/>
+
+<ellipse class="st2" cx="589.912" cy="443.152" rx="117.496" ry="410.57"/>
+
+<ellipse class="st6" cx="634.87" cy="528.471" rx="72.536" ry="214.426"/>
+
+<ellipse class="st3" cx="370.07" cy="812.902" rx="242.171" ry="266.761"/>
+
+<ellipse class="st5" cx="104.921" cy="379.375" rx="72.536" ry="214.425"/>
+
+
+<ellipse transform="matrix(0.9603 0.2791 -0.2791 0.9603 268.3144 -102.8378)" class="st1" cx="495.284" cy="890.798" rx="89.031" ry="163.957"/>
+
+<ellipse class="st0" cx="381.273" cy="986.514" rx="137.876" ry="93.149"/>
+
+</svg>
