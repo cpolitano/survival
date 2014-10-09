@@ -13,18 +13,22 @@ body {
 }
 
 h1 {
-	/*color: #b7ff0f;*/
 	color: white;
 	font-size: 2em;
 	font-weight: 300;
-	/*text-shadow: 0 0 8px $accentGreen;*/
 	text-transform: uppercase;	
 }
 
 .element {
+	top: 17em;
+	left: 20%;
+	margin: 0 auto;
+	position: absolute;
 	font-size: 1.5em;
-	margin: 2em auto;
-	width: 50%;
+	text-transform: uppercase;
+	width: 60%;
+	height: 100px;
+	z-index: 30;
 }
 
 #map {
@@ -35,14 +39,9 @@ h1 {
 	z-index: -1;
 }
 
-.svg-container {
-	height: 75%;
-	width: 100%;
-}
-
 #building {
 	position: fixed;
-	top: 10px;
+	top: 6px;
 	left: 10px;
 	z-index: 20;
 }
@@ -52,7 +51,7 @@ h1 {
 	height: 40px;
 	width: 40px;
 	position: fixed;
-	top: 136px;
+	top: 132px;
 	left: 83px;
 }
 
@@ -74,7 +73,7 @@ h1 {
 #twitter-sprite {
 	background: url('twitter-sprite.png') 0 0 no-repeat;
 	font-size: 1.75em;
-	margin-left: 5%;
+	margin-left: 3%;
 	&:hover{
 		background-position: 0px -34px;
 	}
@@ -93,28 +92,33 @@ h1 {
 }
 
 .search-hidden, .search-show {
+	background-color: #222;
 	border: none;
 	border-radius: 5px;
-	background-color: #222;
-	display:none;
+	display: none;
+	color: #888;
+	height: 40px;
 	font-size: 1.25em;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
 	font-style: italic;
-	height: 40px;
+	margin: 15px;
 	outline: none;
+	text-align: left;
 	width: 200px;
-	transition: ease-out 1s;
-	&:hover{
-		background:red;
-		transition: 1s;
+	text-align: center;
+	&:hover {
+		border: 1px solid $accentGreen;
+	box-shadow: 0 0 2px $accentGreen;
+	color: $accentGreen;	
 	}
 	a {
-		/*font-family: 'Nosifer', cursive;*/
 		text-decoration: none;
-		color: $accentGreen;
+		color: #888;
+		
 	}
 }
+	
 .search-show {
 	display: inline-block;
 }
@@ -123,19 +127,75 @@ h1 {
 }
 
 #results {
-	background: rgba(0,0,0,0.4);
-	/*border-radius: 5px;*/
 	height: 100%;
-	/*margin: 20px auto;*/
+	margin: 100px auto;
 	width: 100%;
-	p {
-		font-size: 2em;
-		font-weight: 300;
-		margin: 10px;
+	
+	h1 {
+		font-size: 4em;
+		color: white;
+	}
+
+
+	#survival-chance {
+
+	margin-bottom: -60px;
+		h2 {
+			font-size: 2.5em;
+			color: #D3D3D3;
+			font-weight: lighter;
+		}
+	}
+
+	h4 {
+		font-size: 1em;
+		color: #D3D3D3;
+		display: inline-block;
+		font-weight: lighter;
+		padding: 10px;
+	}
+	span {
+		font-size: 1em;
+		color: #b7ff0f;
 	}
 }
 
-@media all and (max-width:800px) { 
+#zombies {
+	display: inline-block;
+	h3{
+		color: #D3D3D3;
+		font-weight: lighter;
+		font-size: 1em;
+	}
+	span{
+		color: #b7ff0f;
+	}
+}
+
+#clock {
+	display: inline-block;
+	h3 {
+		color: #D3D3D3;
+		font-weight: lighter;
+		font-size: 1em;
+	}
+	span {
+		color: #b7ff0f;
+	}
+}
+
+@media all and (max-width:1200px) { 
+	#map {
+		top: 15%;
+	}
+	.element {
+		top: 14em;
+	}
+}
+
+
+@media all and (max-width:1000px) { 
+	
 	#map {
 		top: 50%;
 	}
@@ -151,11 +211,40 @@ h1 {
 	.zombie {
 		display: none;
 	}
+
+	.element {
+		top: 12.8em;
+	}
 }
 
 @media all and (max-width:600px) { 
 	#map {
 		top: 80%;
 	}
-}
 
+	.element {
+		top: 21.3em;
+		font-size: 1em;
+	}
+
+	#results {
+		width: 80%;
+		margin: 0 auto;
+		h1 {
+			font-size: 2.4em;
+		}
+		#survival-chance {
+		margin-bottom: -47px;
+			h4 {
+				font-size: 2.2em;
+			}
+			h2 {
+				font-size: 1.4em;
+			}
+			span {
+				font-size: 1.4em;
+			}
+		}
+	}
+
+}

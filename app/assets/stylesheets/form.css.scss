@@ -23,14 +23,14 @@ $accentGreen: #b7ff0f;
 		font-style: italic;
 		margin: 15px;
 		outline: none;
-		text-align: center;
+		text-align: left;
 		width: 200px;
 	}
 
 
 	input[type=submit]:hover {
 		border: 1px solid $accentGreen;
-		box-shadow: 0 0 5px $accentGreen;
+		box-shadow: 0 0 2px $accentGreen;
 		color: $accentGreen;	
 	}
 
