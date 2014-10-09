@@ -8,5 +8,9 @@ FactoryGirl.define do
     delay {43}
     infect_rate {34}
     name {"Brooklyn"}
+    stores {432}
+    score {41}
+    city_name {"Baltimore"}
+    state_name {"Maryland"}
   end
 end
