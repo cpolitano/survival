@@ -16,8 +16,19 @@ $("#search").on('submit', function(event){
 	state = $("select option:selected").val();
 	checkDB(city,state)
 	$("form").hide();
+	$("#clock").hide();
+	$("#zombies").hide();
 	$(".search-hidden").show();
 });
+
+$(".search-hidden").on('click', function(event){
+	event.preventDefault();
+	$(".search-hidden").hide();
+	$("form").show();
+	$("#clock").show();
+	$("#zombies").show();
+	$("#results").hide();
+})
 
 function checkDB(city, state){
 	$.ajax({
@@ -25,7 +36,6 @@ function checkDB(city, state){
 		dataType: "json",
 		method: "GET",
 		success: function(data){
-			console.log(data[0])
 			var needAjax = true;
 			for (var i = 0; i < data.length; i ++){
 				if (data[i].name === city.toLowerCase() + ", " + state.toLowerCase()){
@@ -39,9 +49,9 @@ function checkDB(city, state){
 			if (needAjax){
 				findCity(city,state)
 			} else {
-				$("#results").append("<p>Population: " + population + "</p>");
-    		$("#results").append("<p>Useful Stores Nearby: " + stores + "</p>");
-				$("#results").append("<p>Chance Of Survival: " + score + "%</p>");
+				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
+				$("#results").append("<p>Based on Population: " + population + "</p>");
+    			$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
 			}
 		}
 	})
@@ -125,5 +135,5 @@ function algorithm(population, stores){
 	else if ( population < 10000 ) {
 		survivalRating += 40 + (stores);
 	}
-	return survivalRating;
+	return survivalRating.toFixed(3);
 }

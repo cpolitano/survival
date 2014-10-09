@@ -36,6 +36,7 @@ h1 {
 }
 
 .svg-container {
+	height: 75%;
 	width: 100%;
 }
 
@@ -47,11 +48,11 @@ h1 {
 }
 
 #building-background {
-	background-color: #000;
+	background-color: #262626;
 	height: 40px;
 	width: 40px;
 	position: fixed;
-	top: 137px;
+	top: 136px;
 	left: 83px;
 }
 
@@ -91,7 +92,7 @@ h1 {
 	display: none;
 }
 
-.search-hidden {
+.search-hidden, .search-show {
 	border: none;
 	border-radius: 5px;
 	background-color: #222;
@@ -114,13 +115,19 @@ h1 {
 		color: $accentGreen;
 	}
 }
-
+.search-show {
+	display: inline-block;
+}
 .no-data {
 	font-size: 2em;
 }
 
 #results {
 	background: rgba(0,0,0,0.4);
+	/*border-radius: 5px;*/
+	height: 100%;
+	/*margin: 20px auto;*/
+	width: 100%;
 	p {
 		font-size: 2em;
 		font-weight: 300;
@@ -131,6 +138,18 @@ h1 {
 @media all and (max-width:800px) { 
 	#map {
 		top: 50%;
+	}
+
+	#results {
+		width: 100%;
+	}
+
+	#building-background, #building-div {
+		display: none;
+	}
+
+	.zombie {
+		display: none;
 	}
 }
 
