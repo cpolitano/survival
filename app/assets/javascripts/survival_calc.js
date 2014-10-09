@@ -20,7 +20,7 @@ $("#search").on('submit', function(event){
 	$("#clock").hide();
 	$("#zombies").hide();
 	$(".search-hidden").show();
-	$("#results").html("").show();
+	$("#results").show();
 });
 
 $(".search-hidden").on('click', function(event){
