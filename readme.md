@@ -36,3 +36,6 @@ Calculate your chances of surviving the zombie apocalypse. A group project built
 * SVG 
 * SASS
 * CSS Sprites
+* RSpec
+* Google Maps API
+* USA Today API
