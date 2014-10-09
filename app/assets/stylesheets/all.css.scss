@@ -123,7 +123,7 @@ h1 {
 
 #results {
 	height: 100%;
-	margin-top: 100px;
+	margin: 100px auto;
 	width: 100%;
 	p {
 		font-size: 2em;
@@ -186,4 +186,29 @@ h1 {
 	#map {
 		top: 80%;
 	}
+
+	.element {
+		top: 21.3em;
+		font-size: 1em;
+	}
+	#results {
+		width: 80%;
+		margin: 0 auto;
+		h1 {
+			font-size: 2.4em;
+		}
+		#survival-chance {
+		margin-bottom: -47px;
+			h4 {
+				font-size: 2.2em;
+			}
+			h2 {
+				font-size: 1.4em;
+			}
+			span {
+				font-size: 1.4em;
+			}
+		}
+	}
+
 }
