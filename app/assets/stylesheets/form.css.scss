@@ -12,6 +12,7 @@ $accentGreen: #b7ff0f;
 	z-index: 10;
 
 	input {
+		-webkit-appearance: none;
 		background-color: #222;
 		border: none;
 		border-radius: 5px;
@@ -28,10 +29,13 @@ $accentGreen: #b7ff0f;
 	}
 
 
-	input[type=submit]:hover {
+	input[type=submit] {
+		-webkit-appearance: none;
+	&:hover {
 		border: 1px solid $accentGreen;
 		box-shadow: 0 0 2px $accentGreen;
 		color: $accentGreen;	
+		}
 	}
 
 	input[type=placeholder]{
@@ -39,6 +43,7 @@ $accentGreen: #b7ff0f;
 	}
 
 	select {
+		-webkit-appearance: none;
 		background-color: #222;
 		border: none;
 		color: #888;
