@@ -115,10 +115,11 @@ function callback(results, status) {
     if (runCount === 2){
     	runCount = 0;
     	$("#results").html("<h2>" + htmlName + "</h2>");
-    	$("#results").append("<h3>your chance of survival: <span>" + score + "%</span></h3>");
+    	$("#results").append("<div id='survival-chance'><h3>your chance of survival: <span>" + score + "%</span></h3></div>");
     	$("#results").append("<h4>population: <span>" + population + "</span></h4>");
     	score = algorithm(population, stores);
-    	$("#results").append("<h4>+ useful stores nearby: <span>" + stores + "</span></h4>");
+    	$("#results").append("<h4> useful stores nearby: <span>" + stores + "</span></h4>");
+
     	$.ajax({
     		url: "/cities",
     		method: "POST",
