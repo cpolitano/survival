@@ -3,6 +3,8 @@ var googlePlacesKey = "AIzaSyDae3V_0lLmnd2awsbZFT55GMt7fgAaOBI";
 var map;
 var count;
 var name;
+var cityVar;
+var stateVar;
 var population = 0;
 var stores = 0;
 var score = 0;
@@ -15,7 +17,12 @@ $("#search").on('submit', function(event){
 	event.preventDefault();
 	city = $("#city").val();
 	state = $("select option:selected").val();
-	checkDB(city,state)
+	if (city !== ""){
+		checkDB(city,state)
+	} else {
+		console.log("caught before checkDB()")
+		$("#results").html("<h1> Your inability to follow directions is not promising...</h1>");
+	}
 	$("form").hide();
 	$("#clock").hide();
 	$("#zombies").hide();
@@ -43,7 +50,7 @@ function checkDB(city, state){
 		success: function(data){
 			var needAjax = true;
 			for (var i = 0; i < data.length; i ++){
-				if (data[i].name === city.toLowerCase() + ", " + state.toLowerCase()){
+				if ( (data[i].city_name === city.toLowerCase()) && (data[i].state_name === state.toLowerCase())) {
 					needAjax = false;
 					population = data[i].population;
 					score = data[i].score;
@@ -77,7 +84,9 @@ function findCity(city, state){
 				console.log("usatoday returned data")
 				for (var i = 0; i < data.response.length; i ++){
 					if (data.response[i].StatePostal === state){
-						name = city.toLowerCase() + ", " + state.toLowerCase();
+						cityVar = city.toLowerCase();
+						stateVar = state.toLowerCase();
+						name = cityVar + ", " + stateVar;
 						population = parseInt(data.response[i].Pop);
             url = city.toLowerCase() + "&";
 						initialize(data.response[i].Lat, data.response[i].Long, "guns");
@@ -88,6 +97,9 @@ function findCity(city, state){
 				console.log("usatoday didn't return data")
 				$("#results").html("<h1>" + htmlName + " didn't make it...</h1>");
 			}
+		},
+		failure: function(data){
+			console.log("findCity() failed")
 		}
 	});
 }
@@ -124,7 +136,7 @@ function callback(results, status) {
     		url: "/cities",
     		method: "POST",
     		dataType: "json",
-    		data: {city: {population: population, stores: stores, name: name, score: score}},
+    		data: {city: {population: population, stores: stores, name: name, city_name: cityVar, state_name: stateVar, score: score}},
     		success: function(data){
     			url += "&" + data.id;
     		}
