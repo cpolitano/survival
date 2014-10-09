@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root "zombies#index"
 
   resources :zombies, only: [:index]
-  resources :cities, only: :create
+  resources :cities, only: [:create, :show]
+
+  get "/:id", to: "cities#show"
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -92,7 +92,7 @@ h1 {
 	display: none;
 }
 
-.search-hidden {
+.search-hidden, .search-show {
 	border: none;
 	border-radius: 5px;
 	background-color: #222;
@@ -115,7 +115,9 @@ h1 {
 		color: $accentGreen;
 	}
 }
-
+.search-show {
+	display: inline-block;
+}
 .no-data {
 	font-size: 2em;
 }
