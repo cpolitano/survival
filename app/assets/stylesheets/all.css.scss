@@ -251,9 +251,17 @@ h1 {
 
 @media all and (max-width:400px) { 
 
-	.element {
-		top: 24em;
-		font-size: 1em;
+	#map {
+		top: 75%;
+	}
+
+	.form h1 {
+		font-size: 1.5em;
+		margin: 5px;
+	}
+
+	.element, #clock, #zombies {
+		display: none;
 	}
 
 	#results {
