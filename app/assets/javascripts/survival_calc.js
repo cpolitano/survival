@@ -65,8 +65,8 @@ function checkDB(city, state){
 				console.log("in db")
 				$("#results").html("<h1>" + city + ", " + state + "</h1>");
 				$("#results").append("<div id='survival-chance'><h2>your chance of survival: <span>" + score + "%</span></h2></div>");
-				$("#results").append("<h4>population: <span>" + population + " </span></h4>");
-    			$("#results").append("<h4> useful stores: <span>" + stores + "</span></h4>");
+				$("#results").append("<div id='population'><h4>population: <span>" + population + " </span></h4></div>");
+    			$("#results").append("<div id='useful-stores'><h4> useful stores: <span>" + stores + "</span></h4></div>");
 			}
 		}
 	})
@@ -128,9 +128,9 @@ function callback(results, status) {
     	runCount = 0;
     	$("#results").html("<h2>" + htmlName + "</h2>");
     	$("#results").append("<div id='survival-chance'><h3>your chance of survival: <span>" + score + "%</span></h3></div>");
-    	$("#results").append("<h4>population: <span>" + population + "</span></h4>");
+    	$("#results").append("<div id='population'><h4>population: <span>" + population + "</span></h4></div>");
     	score = algorithm(population, stores);
-    	$("#results").append("<h4> useful stores nearby: <span>" + stores + "</span></h4>");
+    	$("#results").append("<div id='useful-stores'><h4> useful stores nearby: <span>" + stores + "</span></h4><.div>");
 
     	$.ajax({
     		url: "/cities",

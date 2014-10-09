@@ -248,3 +248,34 @@ h1 {
 	}
 
 }
+
+@media all and (max-width:400px) { 
+
+	.element {
+		top: 24em;
+		font-size: 1em;
+	}
+
+	#results {
+		width: 80%;
+		margin: 0 auto;
+		h1 {
+			font-size: 2.4em;
+		}
+		#survival-chance {
+		margin-bottom: -47px;
+			
+			h2 {
+				font-size: 1.4em;
+			}
+			span {
+				font-size: 1.4em;
+			}
+		}
+		#population {
+			margin-top: 10px;
+			margin-bottom: -10px
+		}
+	}
+
+}
