@@ -20,10 +20,15 @@ h1 {
 }
 
 .element {
+	top: 17em;
+	left: 20%;
+	margin: 0 auto;
+	position: absolute;
 	font-size: 1.5em;
-	margin: 2em auto;
 	text-transform: uppercase;
-	width: 55%;
+	width: 60%;
+	height: 100px;
+	z-index: 30;
 }
 
 #map {
@@ -34,14 +39,9 @@ h1 {
 	z-index: -1;
 }
 
-.svg-container {
-	height: 75%;
-	width: 100%;
-}
-
 #building {
 	position: fixed;
-	top: 10px;
+	top: 6px;
 	left: 10px;
 	z-index: 20;
 }
@@ -51,7 +51,7 @@ h1 {
 	height: 40px;
 	width: 40px;
 	position: fixed;
-	top: 136px;
+	top: 132px;
 	left: 83px;
 }
 
@@ -122,10 +122,8 @@ h1 {
 }
 
 #results {
-	background: rgba(0,0,0,0.4);
-	/*border-radius: 5px;*/
 	height: 100%;
-	/*margin: 20px auto;*/
+	margin-top: 100px;
 	width: 100%;
 	p {
 		font-size: 2em;
@@ -134,7 +132,39 @@ h1 {
 	}
 }
 
-@media all and (max-width:800px) { 
+#zombies {
+	display: inline-block;
+	h3{
+		color: #D3D3D3;
+		font-weight: lighter;
+		font-size: 1em;
+	}
+	span{
+		color: #b7ff0f;
+	}
+}
+
+#clock {
+	display: inline-block;
+	h3 {
+		color: #D3D3D3;
+		font-weight: lighter;
+		font-size: 1em;
+	}
+	span {
+		color: #b7ff0f;
+	}
+}
+
+@media all and (max-width:1200px) { 
+	#map {
+		top: 15%;
+	}
+}
+
+
+@media all and (max-width:1000px) { 
+	
 	#map {
 		top: 50%;
 	}
@@ -157,4 +187,3 @@ h1 {
 		top: 80%;
 	}
 }
-

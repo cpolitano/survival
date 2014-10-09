@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var time = 0;
 	var clock = window.setInterval(function(){
 		time++; 
-		$("#clock").html("<h3> " + time + " days in</h3>")
+		$("#clock").html("<h3> Days: <span>" + time + "</span></h3>")
 	}, 250 );
 
 	var killClock = window.setTimeout(function(){
@@ -19,7 +19,7 @@ $(document).ready(function(){
         } else {
             zombie += 123456;
         }           
-        $("#zombies").html("<h3>Zombie Count: "+ zombie + " </h3>")
+        $("#zombies").html("<h3>Zombie Count: <span>" + zombie + "</span>, </h3>")
     }, 5 );
     
     var killZombie = window.setTimeout(function(){

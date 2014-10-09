@@ -21,6 +21,7 @@ $("#search").on('submit', function(event){
 	$("#zombies").hide();
 	$(".search-hidden").show();
 	$("#results").show();
+	$("#Layer_1").css({"opacity": .3});
 });
 
 $(".search-hidden").on('click', function(event){
@@ -30,6 +31,7 @@ $(".search-hidden").on('click', function(event){
 	$("#clock").show();
 	$("#zombies").show();
 	$("#results").hide();
+	$("#Layer_1").css({"opacity": 1});
 })
 
 function checkDB(city, state){
