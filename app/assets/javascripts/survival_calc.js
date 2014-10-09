@@ -8,6 +8,7 @@ var stores = 0;
 var score = 0;
 var runCount = 0;
 var survivalRating = 0;
+// var url;
 
 $("#search").on('submit', function(event){
 	event.preventDefault();
@@ -43,6 +44,7 @@ function checkDB(city, state){
 					population = data[i].population;
 					score = data[i].score;
 					stores = data[i].stores;
+          url = data[i].name + "&id=" + data[i].id
 				}
 			}
 			if (needAjax){
@@ -68,12 +70,13 @@ function findCity(city, state){
 					if (data.response[i].StatePostal === state){
 						name = city.toLowerCase() + ", " + state.toLowerCase();
 						population = parseInt(data.response[i].Pop);
+            // url = name + "&id=" + data[i].id;
 						initialize(data.response[i].Lat, data.response[i].Long, "guns");
 						initialize(data.response[i].Lat, data.response[i].Long, "grocery");
 					}
 				}
 			} else {
-				$("#results").html("They didn't make it...");
+				$("#results").append("<p>They didn't make it...</p>");
 			}
 		}
 	});
