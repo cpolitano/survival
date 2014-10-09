@@ -12,7 +12,10 @@ class CitiesController < ApplicationController
 
 	def show
 		@city = City.find(params[:id])
+		puts params
 	end
+
+
 
 	private
 

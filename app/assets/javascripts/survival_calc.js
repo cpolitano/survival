@@ -8,7 +8,7 @@ var stores = 0;
 var score = 0;
 var runCount = 0;
 var survivalRating = 0;
-// var url;
+var url;
 
 $("#search").on('submit', function(event){
 	event.preventDefault();
@@ -43,13 +43,13 @@ function checkDB(city, state){
 					population = data[i].population;
 					score = data[i].score;
 					stores = data[i].stores;
-          url = data[i].name + "&id=" + data[i].id
+          url = city.toLowerCase() + "&" + data[i].id
 				}
 			}
 			if (needAjax){
 				findCity(city,state)
 			} else {
-				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
+				$("#results").html("<p>Your Chance Of Survival: " + score + "%</p>");
 				$("#results").append("<p>Based on Population: " + population + "</p>");
     			$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
 			}
@@ -68,7 +68,7 @@ function findCity(city, state){
 					if (data.response[i].StatePostal === state){
 						name = city.toLowerCase() + ", " + state.toLowerCase();
 						population = parseInt(data.response[i].Pop);
-            // url = name + "&id=" + data[i].id;
+            url = city.toLowerCase() + "&" + data[i].id;
 						initialize(data.response[i].Lat, data.response[i].Long, "guns");
 						initialize(data.response[i].Lat, data.response[i].Long, "grocery");
 					}
