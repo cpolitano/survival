@@ -9,6 +9,7 @@ var score = 0;
 var runCount = 0;
 var survivalRating = 0;
 var url;
+var htmlName;
 
 $("#search").on('submit', function(event){
 	event.preventDefault();
@@ -19,7 +20,7 @@ $("#search").on('submit', function(event){
 	$("#clock").hide();
 	$("#zombies").hide();
 	$(".search-hidden").show();
-	$("#results").show();
+	$("#results").html("").show();
 });
 
 $(".search-hidden").on('click', function(event){
@@ -32,6 +33,7 @@ $(".search-hidden").on('click', function(event){
 })
 
 function checkDB(city, state){
+	console.log("in checkDB()")
 	$.ajax({
 		url: "/zombies",
 		dataType: "json",
@@ -48,8 +50,10 @@ function checkDB(city, state){
 				}
 			}
 			if (needAjax){
+				console.log("not in db")
 				findCity(city,state)
 			} else {
+				console.log("in db")
 				$("#results").html("<p>" + city + ", " + state + "</p>");
 				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
 				$("#results").append("<p>Based on Population: " + population + "</p>");
@@ -60,24 +64,27 @@ function checkDB(city, state){
 }
 
 function findCity(city, state){
+	console.log("in findCity()")
 	$.ajax({
 		url: "http://api.usatoday.com/open/census/loc?keypat=" + city + "&keyname=placename&sumlevid=4,6&api_key=" + apiKey,
 		method: "GET",
 		dataType: "jsonp",
 		success: function(data){
+			htmlName = city + ", " + state;
 			if (data.response.length > 0){
+				console.log("usatoday returned data")
 				for (var i = 0; i < data.response.length; i ++){
 					if (data.response[i].StatePostal === state){
 						name = city.toLowerCase() + ", " + state.toLowerCase();
-						htmlName = city + ", " + state;
 						population = parseInt(data.response[i].Pop);
-            url = city.toLowerCase() + "&" + data[i].id;
+            url = city.toLowerCase() + "&";
 						initialize(data.response[i].Lat, data.response[i].Long, "guns");
 						initialize(data.response[i].Lat, data.response[i].Long, "grocery");
 					}
 				}
 			} else {
-				$("#results").append("<p>" + htmlName + " didn't make it...</p>");
+				console.log("usatoday didn't return data")
+				$("#results").html("<p>" + htmlName + " didn't make it...</p>");
 			}
 		}
 	});
@@ -100,6 +107,7 @@ function initialize(lat,lng, search) {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
+  	console.log("google found a place")
     stores += results.length;
     runCount++;
     if (runCount === 2){
@@ -114,31 +122,17 @@ function callback(results, status) {
     		method: "POST",
     		dataType: "json",
     		data: {city: {population: population, stores: stores, name: name, score: score}},
+    		success: function(data){
+    			url += "&" + data.id;
+    		}
     	})
+    	console.log("google stored the data")
     }
   } else {
+  	console.log("google couldn't find the place")
   	runCount++;
   	if (runCount === 2){
-  		$("#results").append("<p>" + htmlName + " didn't make it...</p>");
+  		$("#results").html("<p>" + htmlName + " didn't make it...</p>");
   	}
   }
-}
-
-function algorithm(population, stores){
-	if ( population > 1000000 ) {
-		survivalRating += 0 + (stores/6);
-	}
-	else if ( population > 250000 && population < 1000000 ) {
-		survivalRating += 10 + (stores/5);
-	}
-	else if ( population > 50000 && population < 250000 ) {
-		survivalRating += 15 + (stores/4);
-	}
-	else if ( population > 10000 && population < 50000 ) {
-		survivalRating += 25 + (stores/2);
-	}
-	else if ( population < 10000 ) {
-		survivalRating += 40 + (stores);
-	}
-	return survivalRating.toFixed(3);
 }
