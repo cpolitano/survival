@@ -56,10 +56,10 @@ function checkDB(city, state){
 				findCity(city,state)
 			} else {
 				console.log("in db")
-				$("#results").html("<p>" + city + ", " + state + "</p>");
-				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
-				$("#results").append("<p>Based on Population: " + population + "</p>");
-    			$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
+				$("#results").html("<h1>" + city + ", " + state + "</h1>");
+				$("#results").append("<div id='survival-chance'><h2>your chance of survival: <span>" + score + "%</span></h2></div>");
+				$("#results").append("<h4>population: <span>" + population + " </span></h4>");
+    			$("#results").append("<h4> useful stores: <span>" + stores + "</span></h4>");
 			}
 		}
 	})
@@ -86,7 +86,7 @@ function findCity(city, state){
 				}
 			} else {
 				console.log("usatoday didn't return data")
-				$("#results").html("<p>" + htmlName + " didn't make it...</p>");
+				$("#results").html("<h1>" + htmlName + " didn't make it...</h1>");
 			}
 		}
 	});
@@ -114,11 +114,11 @@ function callback(results, status) {
     runCount++;
     if (runCount === 2){
     	runCount = 0;
-    	$("#results").html("<p>" + htmlName + "</p>");
-    	$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
-    	$("#results").append("<p>Based on Population: " + population + "</p>");
+    	$("#results").html("<h2>" + htmlName + "</h2>");
+    	$("#results").append("<h3>your chance of survival: <span>" + score + "%</span></h3>");
+    	$("#results").append("<h4>population: <span>" + population + "</span></h4>");
     	score = algorithm(population, stores);
-    	$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
+    	$("#results").append("<h4>+ useful stores nearby: <span>" + stores + "</span></h4>");
     	$.ajax({
     		url: "/cities",
     		method: "POST",
@@ -134,7 +134,7 @@ function callback(results, status) {
   	console.log("google couldn't find the place")
   	runCount++;
   	if (runCount === 2){
-  		$("#results").html("<p>" + htmlName + " didn't make it...</p>");
+  		$("#results").html("<h1>" + htmlName + " didn't make it...</h1>");
   	}
   }
 }
