@@ -97,6 +97,7 @@ function callback(results, status) {
     stores += results.length;
     runCount++;
     if (runCount === 2){
+    	runCount = 0;
     	$("#results").append("<p>Population: " + population + "</p>");
     	$("#results").append("<p>Useful Stores Nearby: " + stores + "</p>");
     	score = algorithm(population, stores);
