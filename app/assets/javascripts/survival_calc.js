@@ -18,6 +18,7 @@ $("#search").on('submit', function(event){
 	$("#clock").hide();
 	$("#zombies").hide();
 	$(".search-hidden").show();
+	$("#results").show();
 });
 
 $(".search-hidden").on('click', function(event){
@@ -45,9 +46,10 @@ function checkDB(city, state){
 				}
 			}
 			if (needAjax){
+				console.log("Not In DB");
 				findCity(city,state)
 			} else {
-				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
+				$("#results").html("<p>Your Chance Of Survival: " + score + "%</p>");
 				$("#results").append("<p>Based on Population: " + population + "</p>");
     			$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
 			}
@@ -71,7 +73,7 @@ function findCity(city, state){
 					}
 				}
 			} else {
-				$("#results").append("They didn't make it...");
+				$("#results").html("They didn't make it...");
 			}
 		}
 	});
@@ -98,7 +100,7 @@ function callback(results, status) {
     runCount++;
     if (runCount === 2){
     	runCount = 0;
-    	$("#results").append("<p>Population: " + population + "</p>");
+    	$("#results").html("<p>Population: " + population + "</p>");
     	$("#results").append("<p>Useful Stores Nearby: " + stores + "</p>");
     	score = algorithm(population, stores);
     	$("#results").append("<p>Chance Of Survival: " + score + "%</p>");
