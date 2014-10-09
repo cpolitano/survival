@@ -7,7 +7,7 @@ var cityVar;
 var stateVar;
 var population = 0;
 var stores = 0;
-var score = 0;
+var score;
 var runCount = 0;
 var survivalRating = 0;
 var url;
@@ -126,10 +126,10 @@ function callback(results, status) {
     runCount++;
     if (runCount === 2){
     	runCount = 0;
+    	score = algorithm(population, stores);
     	$("#results").html("<h1>" + htmlName + "</h1>");
     	$("#results").append("<div id='survival-chance'><h2>your chance of survival: <span>" + score + "%</span></h2></div>");
     	$("#results").append("<div id='population'><h4>population: <span>" + population + "</span></h4></div>");
-    	score = algorithm(population, stores);
     	$("#results").append("<div id='useful-stores'><h4> useful stores: <span>" + stores + "</span></h4></div>");
 
     	$.ajax({
