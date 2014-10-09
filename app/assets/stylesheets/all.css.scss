@@ -36,6 +36,7 @@ h1 {
 }
 
 .svg-container {
+	height: 75%;
 	width: 100%;
 }
 
@@ -121,9 +122,10 @@ h1 {
 
 #results {
 	background: rgba(0,0,0,0.4);
-	border-radius: 5px;
-	margin: 20px auto;
-	width: 60%;
+	/*border-radius: 5px;*/
+	height: 100%;
+	/*margin: 20px auto;*/
+	width: 100%;
 	p {
 		font-size: 2em;
 		font-weight: 300;
