@@ -130,7 +130,7 @@ function callback(results, status) {
     	$("#results").append("<div id='survival-chance'><h2>your chance of survival: <span>" + score + "%</span></h2></div>");
     	$("#results").append("<div id='population'><h4>population: <span>" + population + "</span></h4></div>");
     	score = algorithm(population, stores);
-    	$("#results").append("<div id='useful-stores'><h4> useful stores nearby: <span>" + stores + "</span></h4></div>");
+    	$("#results").append("<div id='useful-stores'><h4> useful stores: <span>" + stores + "</span></h4></div>");
 
     	$.ajax({
     		url: "/cities",
@@ -150,4 +150,23 @@ function callback(results, status) {
   		$("#results").html("<h1>" + htmlName + " didn't make it...</h1>");
   	}
   }
+}
+
+function algorithm(population, stores){
+	if ( population > 1000000 ) {
+		survivalRating += 0 + (stores/6);
+	}
+	else if ( population > 250000 && population < 1000000 ) {
+		survivalRating += 10 + (stores/5);
+	}
+	else if ( population > 50000 && population < 250000 ) {
+		survivalRating += 15 + (stores/4);
+	}
+	else if ( population > 10000 && population < 50000 ) {
+		survivalRating += 25 + (stores/2);
+	}
+	else if ( population < 10000 ) {
+		survivalRating += 40 + (stores);
+	}
+	return survivalRating.toFixed(3);
 }

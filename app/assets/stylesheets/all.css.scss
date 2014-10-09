@@ -296,14 +296,8 @@ h1 {
 				font-size: 1.4em;
 			}
 		}
-		#population {
-			margin-top: 10px;
-			margin-bottom: -10px
-		}
-
-		#useful-stores {
-			margin-top: -10px;
+		#population, #useful-stores {
+			display: none;
 		}
 	}
-
 }
