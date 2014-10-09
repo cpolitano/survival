@@ -17,7 +17,12 @@ $("#search").on('submit', function(event){
 	event.preventDefault();
 	city = $("#city").val();
 	state = $("select option:selected").val();
-	checkDB(city,state)
+	if (city !== ""){
+		checkDB(city,state)
+	} else {
+		console.log("caught before checkDB()")
+		$("#results").html("<h1> Your inability to follow directions is not promising...</h1>");
+	}
 	$("form").hide();
 	$("#clock").hide();
 	$("#zombies").hide();
@@ -92,6 +97,9 @@ function findCity(city, state){
 				console.log("usatoday didn't return data")
 				$("#results").html("<h1>" + htmlName + " didn't make it...</h1>");
 			}
+		},
+		failure: function(data){
+			console.log("findCity() failed")
 		}
 	});
 }
