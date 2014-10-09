@@ -7,7 +7,10 @@ class CitiesController < ApplicationController
 				format.html {redirect_to root_path}
 				format.json { render json: @city}
 			end
+		else 
+			render :text => "Invalid Search"
 		end
+
 	end
 
 	def show

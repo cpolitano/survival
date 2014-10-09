@@ -3,6 +3,8 @@ var googlePlacesKey = "AIzaSyDae3V_0lLmnd2awsbZFT55GMt7fgAaOBI";
 var map;
 var count;
 var name;
+var cityVar;
+var stateVar;
 var population = 0;
 var stores = 0;
 var score = 0;
@@ -37,7 +39,7 @@ function checkDB(city, state){
 		success: function(data){
 			var needAjax = true;
 			for (var i = 0; i < data.length; i ++){
-				if (data[i].name === city.toLowerCase() + ", " + state.toLowerCase()){
+				if ( (data[i].city_name === city.toLowerCase()) && (data[i].state_name === state.toLowerCase())) {
 					needAjax = false;
 					population = data[i].population;
 					score = data[i].score;
@@ -49,7 +51,7 @@ function checkDB(city, state){
 			} else {
 				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
 				$("#results").append("<p>Based on Population: " + population + "</p>");
-    			$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
+    		$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
 			}
 		}
 	})
@@ -64,7 +66,9 @@ function findCity(city, state){
 			if (data.response.length > 0){
 				for (var i = 0; i < data.response.length; i ++){
 					if (data.response[i].StatePostal === state){
-						name = city.toLowerCase() + ", " + state.toLowerCase();
+						cityVar = city.toLowerCase();
+						stateVar = state.toLowerCase();
+						name = cityVar + ", " + stateVar;
 						population = parseInt(data.response[i].Pop);
 						initialize(data.response[i].Lat, data.response[i].Long, "guns");
 						initialize(data.response[i].Lat, data.response[i].Long, "grocery");
@@ -105,7 +109,7 @@ function callback(results, status) {
     		url: "/cities",
     		method: "POST",
     		dataType: "json",
-    		data: {city: {population: population, stores: stores, name: name, score: score}},
+    		data: {city: {population: population, stores: stores, city_name: cityVar, state_name: stateVar, name: name, score: score}},
     	})
     }
   } else {
