@@ -21,7 +21,7 @@ $("#search").on('submit', function(event){
 		checkDB(city,state)
 	} else {
 		console.log("caught before checkDB()")
-		$("#results").html("<h1> Your inability to follow directions is not promising...</h1>");
+		$("#results").html("<h1>Your inability to follow directions is not promising...</h1>");
 	}
 	$("form").hide();
 	$("#clock").hide();
@@ -126,11 +126,11 @@ function callback(results, status) {
     runCount++;
     if (runCount === 2){
     	runCount = 0;
-    	$("#results").html("<h2>" + htmlName + "</h2>");
-    	$("#results").append("<div id='survival-chance'><h3>your chance of survival: <span>" + score + "%</span></h3></div>");
+    	$("#results").html("<h1>" + htmlName + "</h1>");
+    	$("#results").append("<div id='survival-chance'><h2>your chance of survival: <span>" + score + "%</span></h2></div>");
     	$("#results").append("<div id='population'><h4>population: <span>" + population + "</span></h4></div>");
     	score = algorithm(population, stores);
-    	$("#results").append("<div id='useful-stores'><h4> useful stores nearby: <span>" + stores + "</span></h4><.div>");
+    	$("#results").append("<div id='useful-stores'><h4> useful stores nearby: <span>" + stores + "</span></h4></div>");
 
     	$.ajax({
     		url: "/cities",
