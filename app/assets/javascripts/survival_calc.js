@@ -20,13 +20,21 @@ $("#search").on('submit', function(event){
 	$(".search-hidden").show();
 });
 
+$(".search-hidden").on('click', function(event){
+	event.preventDefault();
+	$(".search-hidden").hide();
+	$("form").show();
+	$("#clock").show();
+	$("#zombies").show();
+	$("#results").hide();
+})
+
 function checkDB(city, state){
 	$.ajax({
 		url: "/zombies",
 		dataType: "json",
 		method: "GET",
 		success: function(data){
-			console.log(data[0])
 			var needAjax = true;
 			for (var i = 0; i < data.length; i ++){
 				if (data[i].name === city.toLowerCase() + ", " + state.toLowerCase()){
@@ -124,5 +132,5 @@ function algorithm(population, stores){
 	else if ( population < 10000 ) {
 		survivalRating += 40 + (stores);
 	}
-	return survivalRating;
+	return survivalRating.toFixed(3);
 }

@@ -11,7 +11,7 @@ $(function(){
       showCursor: false,
       attr: null, // attribute to type, null = text for everything except inputs, which default to placeholder
       callback: function(){ 
-        $(".element").animate({"opacity":"0"}, 1500, function(){
+        $(".element").animate({"opacity":"0"}, 2000, function(){
           $(".element").remove();
         });
       } // call function after typing is done
