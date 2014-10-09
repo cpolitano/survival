@@ -48,10 +48,10 @@ function checkDB(city, state){
 				}
 			}
 			if (needAjax){
-				console.log("Not In DB");
 				findCity(city,state)
 			} else {
-				$("#results").html("<p>Your Chance Of Survival: " + score + "%</p>");
+				$("#results").html("<p>" + city + ", " + state + "</p>");
+				$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
 				$("#results").append("<p>Based on Population: " + population + "</p>");
     			$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
 			}
@@ -69,6 +69,7 @@ function findCity(city, state){
 				for (var i = 0; i < data.response.length; i ++){
 					if (data.response[i].StatePostal === state){
 						name = city.toLowerCase() + ", " + state.toLowerCase();
+						htmlName = city + ", " + state;
 						population = parseInt(data.response[i].Pop);
             url = city.toLowerCase() + "&" + data[i].id;
 						initialize(data.response[i].Lat, data.response[i].Long, "guns");
@@ -76,7 +77,7 @@ function findCity(city, state){
 					}
 				}
 			} else {
-				$("#results").append("<p>They didn't make it...</p>");
+				$("#results").append("<p>" + htmlName + " didn't make it...</p>");
 			}
 		}
 	});
@@ -103,10 +104,11 @@ function callback(results, status) {
     runCount++;
     if (runCount === 2){
     	runCount = 0;
-    	$("#results").html("<p>Population: " + population + "</p>");
-    	$("#results").append("<p>Useful Stores Nearby: " + stores + "</p>");
+    	$("#results").html("<p>" + htmlName + "</p>");
+    	$("#results").append("<p>Your Chance Of Survival: " + score + "%</p>");
+    	$("#results").append("<p>Based on Population: " + population + "</p>");
     	score = algorithm(population, stores);
-    	$("#results").append("<p>Chance Of Survival: " + score + "%</p>");
+    	$("#results").append("<p>+ Useful Stores Nearby: " + stores + "</p>");
     	$.ajax({
     		url: "/cities",
     		method: "POST",
@@ -117,7 +119,7 @@ function callback(results, status) {
   } else {
   	runCount++;
   	if (runCount === 2){
-  		$("#results").append("They didn't make it...");
+  		$("#results").append("<p>" + htmlName + " didn't make it...</p>");
   	}
   }
 }
