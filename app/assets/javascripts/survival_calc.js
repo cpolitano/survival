@@ -15,6 +15,8 @@ var htmlName;
 
 $("#search").on('submit', function(event){
 	event.preventDefault();
+	score = 0;
+	stores = 0;
 	city = $("#city").val();
 	state = $("select option:selected").val();
 	if (city !== ""){
@@ -153,6 +155,7 @@ function callback(results, status) {
 }
 
 function algorithm(population, stores){
+	survivalRating = 0;
 	if ( population > 1000000 ) {
 		survivalRating += 0 + (stores/6);
 	}
