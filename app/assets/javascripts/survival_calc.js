@@ -22,7 +22,6 @@ $("#search").on('submit', function(event){
 	if (city !== ""){
 		checkDB(city,state)
 	} else {
-		console.log("caught before checkDB()")
 		$("#results").html("<h1>Your inability to follow directions is not promising...</h1>");
 	}
 	$("form").hide();
@@ -44,7 +43,6 @@ $(".search-hidden").on('click', function(event){
 })
 
 function checkDB(city, state){
-	console.log("in checkDB()")
 	$.ajax({
 		url: "/zombies",
 		dataType: "json",
@@ -61,10 +59,8 @@ function checkDB(city, state){
 				}
 			}
 			if (needAjax){
-				console.log("not in db")
 				findCity(city,state)
 			} else {
-				console.log("in db")
 				$("#results").html("<h1>" + city + ", " + state + "</h1>");
 				$("#results").append("<div id='survival-chance'><h2>your chance of survival: <span>" + score + "%</span></h2></div>");
 				$("#results").append("<div id='population'><h4>population: <span>" + population + " </span></h4></div>");
@@ -75,7 +71,6 @@ function checkDB(city, state){
 }
 
 function findCity(city, state){
-	console.log("in findCity()")
 	$.ajax({
 		url: "http://api.usatoday.com/open/census/loc?keypat=" + city + "&keyname=placename&sumlevid=4,6&api_key=" + apiKey,
 		method: "GET",
@@ -83,7 +78,6 @@ function findCity(city, state){
 		success: function(data){
 			htmlName = city + ", " + state;
 			if (data.response.length > 0){
-				console.log("usatoday returned data")
 				for (var i = 0; i < data.response.length; i ++){
 					if (data.response[i].StatePostal === state){
 						cityVar = city.toLowerCase();
@@ -96,12 +90,11 @@ function findCity(city, state){
 					}
 				}
 			} else {
-				console.log("usatoday didn't return data")
 				$("#results").html("<h1>" + htmlName + " didn't make it...</h1>");
 			}
 		},
 		failure: function(data){
-			console.log("findCity() failed")
+			$("#results").html("<h1>We have no reports on " + city + ", " + state + "</h1>");
 		}
 	});
 }
@@ -123,7 +116,6 @@ function initialize(lat,lng, search) {
 
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-  	console.log("google found a place")
     stores += results.length;
     runCount++;
     if (runCount === 2){
@@ -143,10 +135,8 @@ function callback(results, status) {
     			url += "&" + data.id;
     		}
     	})
-    	console.log("google stored the data")
     }
   } else {
-  	console.log("google couldn't find the place")
   	runCount++;
   	if (runCount === 2){
   		$("#results").html("<h1>" + htmlName + " didn't make it...</h1>");
